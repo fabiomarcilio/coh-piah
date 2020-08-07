@@ -72,10 +72,15 @@ def n_palavras_diferentes(lista_palavras):
 
 def compara_assinatura(as_a, as_b):
     '''IMPLEMENTAR. Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
-    pass
+    i = 0
+    soma = 0
+    for objeto in as_a:
+        soma = soma + (abs(as_a[i] - as_b[i]))
+        i = i + 1
+    
 
 def calcula_assinatura(texto):
-    '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
+    '''Funcao recebe um texto e deve devolver a assinatura do texto.'''
     lista_sentencas = separa_sentencas(texto)
     
     lista_frases = []
@@ -109,10 +114,3 @@ def calcula_assinatura(texto):
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
     pass
-
-
-def teste(textos):
-    for texto in textos:
-        calcula_assinatura(texto)
-
-teste(le_textos())
